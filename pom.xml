@@ -16,31 +16,43 @@
 	<!--<packaging>war</packaging>-->
 
 	<properties>
-		<java.version>13</java.version>
+		<java.version>11</java.version>
 	</properties>
+
+	<!--
+	By default, Spring boot comes with 3 types of embed servers Tomcat, Jetty and undertow.
+	By default, Spring boot enables tomcat as the embedded server.
+	Spring boot gives us the flexibility to use tomcat or any other embedded server or not. If we do not want we can exclude this default server.
+	-->
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
+			<!--Exclude Tomcat-->
+			<!--<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-tomcat</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions>-->
 		</dependency>
-
-		<!--<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>-->
 
 		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<!--Add Jetty Server-->
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jetty</artifactId>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

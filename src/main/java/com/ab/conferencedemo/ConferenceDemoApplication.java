@@ -2,7 +2,10 @@ package com.ab.conferencedemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 
+//Exclude Tomcat and All Servers
+//@SpringBootApplication(exclude = {EmbeddedServletContainerAutoConfiguration.class, WebMvcAutoConfiguration.class})
 @SpringBootApplication
 public class ConferenceDemoApplication {
 
